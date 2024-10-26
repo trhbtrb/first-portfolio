@@ -12,34 +12,64 @@
 
     <div class="container">
         <div class="glass-container">
+
+            <!-- Logo at the top -->
+            <div class="logo">
+                <a href="#home" onclick="showSection('home')">Logo Here</a>
+            </div>
+
+            <!-- Navigation links below the logo -->
             <nav class="navbar">
-                <div class="logo"><a href="#">AsmrProg</a></div>
                 <ul class="nav-links">
-                    <li class="nav-link"><a href="#">Home</a></li>
-                    <li class="nav-link"><a href="#">Youtube</a></li>
-                    <li class="nav-link"><a href="#">About</a></li>
+                    <li class="nav-link"><a href="#home" onclick="showSection('home')">Home</a></li>
+                    <li class="nav-link"><a href="#portfolio" onclick="showSection('portfolio')">Portfolio</a></li>
+                    <li class="nav-link"><a href="#about" onclick="showSection('about')">About</a></li>
                 </ul>
             </nav>
-            <div class="content">
-                <div class="main">
-                    <h2>Hey! 👋,<br>It's AsmrProg</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-                        Soluta ducimus dicta nisi quisquam rerum
-                    </p>
-                    <button>Get Started</button>
-                </div>
-                <div class="image-wrapper">
-                    <img src="image.png">
-                    <div class="attrebute">
-                        <a
-                            href="https://www.freepik.com/free-psd/marketing-concept-with-woman-rocketship_33417710.htm#page=2&query=3d%20illustration&position=32&from_view=search&track=ais">Image
-                            by Freepik</a>
-                    </div>
-                </div>
+
+            <!-- Home Section -->
+            <div id="home" class="main-section">
+                <h2>Hey! 👋,<br>It's Me</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                    Soluta ducimus dicta nisi quisquam rerum
+                </p>
+                <button onclick="showSection('portfolio')">View Portfolio</button>
+                <button onclick="showSection('about')">About Me</button>
             </div>
+
+            <!-- Portfolio Section (Hidden by default) -->
+            <div id="portfolio" class="main-section hidden">
+                <h2>My Portfolio</h2>
+                <p>
+                    Here are some of my recent works and projects. Take a look and explore!
+                </p>
+                <!-- Add portfolio items here -->
+            </div>
+
+            <!-- About Section (Hidden by default) -->
+            <div id="about" class="main-section hidden">
+                <h2>About Me</h2>
+                <p>
+                    I am a passionate developer with skills in front-end and back-end technologies. 
+                    With a love for coding and problem-solving, I aim to create beautiful and functional web applications.
+                </p>
+            </div>
+
         </div>
     </div>
+
+    <script>
+        // JavaScript to show or hide sections based on navigation click
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.main-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
 
 </body>
 
